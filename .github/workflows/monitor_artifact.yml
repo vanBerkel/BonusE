@@ -13,7 +13,7 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Download previous artifact
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: old_value
           path: .
@@ -34,7 +34,7 @@ jobs:
           API_URL: ${{ secrets.API_URL }}
 
       - name: Upload new artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: old_value
           path: old_value.json
