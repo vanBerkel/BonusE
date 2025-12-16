@@ -12,12 +12,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Download previous artifact
-        uses: actions/download-artifact@v4
-        with:
-          name: old_value
-          path: .
-
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
