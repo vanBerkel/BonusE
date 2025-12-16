@@ -3,9 +3,9 @@ import json
 import requests
 
 # ===== CONFIG DA ENV =====
-API_URL = os.environ["https://www.bonusveicolielettrici.mase.gov.it/veicolielettriciBeneficiario/api/unsecured/plafond"]
-TELEGRAM_TOKEN = os.environ["7744368183:AAEdcJPS1FmuBiu5d4zGjeNdKnQm1gplZbQ"]
-CHAT_ID = os.environ["1490365588"]
+API_URL = os.environ["API_URL"]
+TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
 STATE_FILE = "stato_plafond.json"
 
 # Funzione invio Telegram
