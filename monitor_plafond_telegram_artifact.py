@@ -21,7 +21,7 @@ def load_old():
     if os.path.exists(OLD_FILE):
         with open(OLD_FILE) as f:
             return json.load(f).get("value")
-    return None
+    return 0
 
 def save(val):
     with open(OLD_FILE, "w") as f:
