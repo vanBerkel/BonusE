@@ -1,4 +1,4 @@
-name: Monitor Plafond Telegram
+name: Monitor Plafond Telegram Artifact
 
 on:
   schedule:
@@ -6,11 +6,17 @@ on:
   workflow_dispatch:
 
 jobs:
-  run-script:
+  monitor:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
+      - name: Download previous artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: old_value
+          path: .
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -21,8 +27,14 @@ jobs:
         run: pip install requests
 
       - name: Run monitor script
-        run: python monitor_plafond_telegram.py
+        run: python monitor_plafond_telegram_artifact.py
         env:
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
           CHAT_ID: ${{ secrets.CHAT_ID }}
           API_URL: ${{ secrets.API_URL }}
+
+      - name: Upload new artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: old_value
+          path: old_value.json
