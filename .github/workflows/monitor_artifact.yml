@@ -17,7 +17,6 @@ jobs:
         with:
           name: old_value
           path: .
-          continue-on-error: true
 
       - name: Set up Python
         uses: actions/setup-python@v4
