@@ -35,7 +35,7 @@ def get_old_value():
     return int(json.loads(content)["value"])
 
 def save_value(value):
-    print("DEBUG: HEADERS =", HEADERS_W)
+    print("DEBUG: HEADERS =", HEADERS_W[:20])
     payload = {
         "files": {
             "plafond.json": {
