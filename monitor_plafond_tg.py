@@ -12,20 +12,13 @@ GIST_ID = os.environ["GIST_ID"]
 GIT_HUB_TOKEN = os.environ["GIST_PAT"]
 
 GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
+
 HEADERS = {
-    "User-Agent": "PythonMonitor"
-}
-HEADERS_W = {
     "Authorization": f"Bearer {GIT_HUB_TOKEN}",
     "Accept": "application/vnd.github+json",
     "User-Agent": "PythonMonitor"
 }
 
-GIST_URL_W = f"https://api.github.com/gists/{GIST_ID}"
-print("DEBUG: GIST_ID =", GIST_ID[:4])
-print("DEBUG: GIST_URL =", GIST_URL)
-print("DEBUG: HEADERS =", HEADERS)
-print("DEBUG: HEADERS =", HEADERS_W)
 
 def get_plafond():
     r = requests.get(API_URL, timeout=10)
@@ -50,7 +43,7 @@ def save_value(value):
         }
     }
     
-    r = requests.patch(GIST_URL_W, headers=HEADERS_W, json=payload)
+    r = requests.patch(GIST_URL, headers=HEADERS, json=payload)
     print("PATCH STATUS:", r.status_code)
     print("PATCH RESPONSE:", r.text)
     r.raise_for_status()
