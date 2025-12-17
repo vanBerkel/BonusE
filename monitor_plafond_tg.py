@@ -14,7 +14,9 @@ HEADERS = {
     "User-Agent": "PythonMonitor"
 }
 HEADERS_W = {
-    "Authorization": f"token {GIT_HUB_TOKEN}"
+    "Authorization": f"token {GITHUB_TOKEN}",
+    "Accept": "application/vnd.github+json",
+    "User-Agent": "PythonMonitor"
 }
 print("DEBUG: GIST_ID =", GIST_ID[:4])
 print("DEBUG: GIST_URL =", GIST_URL)
