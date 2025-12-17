@@ -28,7 +28,7 @@ print("DEBUG: HEADERS =", HEADERS_W)
 def get_plafond():
     r = requests.get(API_URL, timeout=10)
     r.raise_for_status()
-    return r.json()["residuoPlafond"]  # verifica il campo
+    return int(r.json()["plafondResiduo"])  # verifica il campo
 
 def get_old_value():
     r = requests.get(GIST_URL, headers=HEADERS)
@@ -39,6 +39,7 @@ def get_old_value():
     return int(json.loads(content)["value"])
 
 def save_value(value):
+    value = int(value)
     payload = {
         "files": {
             "plafond.json": {
@@ -61,6 +62,7 @@ def send_telegram(msg):
 
 def main():
     current = get_plafond()
+    print("DEBUG: type(current) =", type(current), "value =", current)
     old = get_old_value()
 
     if current != old:
