@@ -7,7 +7,7 @@ TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
 
 GIST_ID = os.environ["GIST_ID"]
-GIT_HUB_TOKEN = os.environ["GIT_HUB_TOKEN"]
+GIT_HUB_TOKEN = os.environ["GIST_PAT"]
 
 GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
 HEADERS = {
