@@ -13,6 +13,9 @@ GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
 HEADERS = {
     "User-Agent": "PythonMonitor"
 }
+HEADERS_W = {
+    "Authorization": f"token {GIT_HUB_TOKEN}"
+}
 print("DEBUG: GIST_ID =", GIST_ID[:4])
 print("DEBUG: GIST_URL =", GIST_URL)
 print("DEBUG: HEADERS =", HEADERS)
@@ -37,7 +40,7 @@ def save_value(value):
             }
         }
     }
-    r = requests.patch(GIST_URL, headers=HEADERS, json=payload)
+    r = requests.patch(GIST_URL, headers=HEADERS_W, json=payload)
     r.raise_for_status()
 
 def send_telegram(msg):
