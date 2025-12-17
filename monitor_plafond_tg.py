@@ -14,7 +14,7 @@ HEADERS = {
     "User-Agent": "PythonMonitor"
 }
 HEADERS_W = {
-    "Authorization": f"token {GITHUB_TOKEN}",
+    "Authorization": f"token {GIT_HUB_TOKEN}",
     "Accept": "application/vnd.github+json",
     "User-Agent": "PythonMonitor"
 }
@@ -42,6 +42,8 @@ def save_value(value):
             }
         }
     }
+    print("DEBUG: HEADERS =", HEADERS_W)
+
     r = requests.patch(GIST_URL, headers=HEADERS_W, json=payload)
     r.raise_for_status()
 
