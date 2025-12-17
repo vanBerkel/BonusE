@@ -11,8 +11,7 @@ GIT_HUB_TOKEN = os.environ["GIT_HUB_TOKEN"]
 
 GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
 HEADERS = {
-    "Authorization": f"{GIT_HUB_TOKEN}",
-    "Accept": "application/vnd.github+json"
+    "Authorization": f"{GIT_HUB_TOKEN}"
 }
 
 def get_plafond():
