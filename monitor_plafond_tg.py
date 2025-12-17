@@ -14,7 +14,7 @@ HEADERS = {
     "User-Agent": "PythonMonitor"
 }
 HEADERS_W = {
-    "Authorization": f"Bearer {GIT_HUB_TOKEN}",
+    "Authorization": f"{GIT_HUB_TOKEN}",
     "Accept": "application/vnd.github+json",
     "User-Agent": "PythonMonitor"
 }
