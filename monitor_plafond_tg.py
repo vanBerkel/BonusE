@@ -28,7 +28,7 @@ print("DEBUG: HEADERS =", HEADERS_W)
 def get_plafond():
     r = requests.get(API_URL, timeout=10)
     r.raise_for_status()
-    return int(r.json()["plafondResiduo"])  # verifica il campo
+    return int(r.json()["residuoPlafond"])  # verifica il campo
 
 def get_old_value():
     r = requests.get(GIST_URL, headers=HEADERS)
