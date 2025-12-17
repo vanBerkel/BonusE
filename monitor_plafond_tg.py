@@ -35,6 +35,7 @@ def get_old_value():
     return int(json.loads(content)["value"])
 
 def save_value(value):
+    print("DEBUG: HEADERS =", HEADERS_W)
     payload = {
         "files": {
             "plafond.json": {
@@ -42,8 +43,6 @@ def save_value(value):
             }
         }
     }
-    print("DEBUG: HEADERS =", HEADERS_W)
-
     r = requests.patch(GIST_URL, headers=HEADERS_W, json=payload)
     r.raise_for_status()
 
