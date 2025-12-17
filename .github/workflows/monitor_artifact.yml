@@ -29,3 +29,5 @@ jobs:
           CHAT_ID: ${{ secrets.CHAT_ID }}
           GIST_ID: ${{ secrets.GIST_ID }}
           GIT_HUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GIST_PAT: ${{ secrets.GIST_PAT }}
+
