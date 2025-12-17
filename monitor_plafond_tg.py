@@ -10,8 +10,7 @@ GIST_ID = os.environ["GIST_ID"]
 GIT_HUB_TOKEN = os.environ["GIT_HUB_TOKEN"]
 
 GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
-HEADERS = {
-}
+HEADERS = {}
 
 def get_plafond():
     r = requests.get(API_URL, timeout=10)
