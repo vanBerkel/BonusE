@@ -22,7 +22,7 @@ jobs:
         run: pip install requests
 
       - name: Run monitor script
-        run: python monitor_plafond_telegram.py
+        run: python monitor_plafond_tg.py
         env:
           API_URL: ${{ secrets.API_URL }}
           TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
