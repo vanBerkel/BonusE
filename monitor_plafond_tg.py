@@ -13,7 +13,9 @@ GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
 HEADERS = {
     "User-Agent": "PythonMonitor"
 }
-
+print("DEBUG: GIST_ID =", GIST_ID)
+print("DEBUG: GIST_URL =", GIST_URL)
+print("DEBUG: HEADERS =", HEADERS)
 def get_plafond():
     r = requests.get(API_URL, timeout=10)
     r.raise_for_status()
