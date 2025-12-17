@@ -2,6 +2,8 @@ import os
 import requests
 import json
 
+print("DEBUG: env keys =", list(os.environ.keys()))
+
 API_URL = os.environ["API_URL"]
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
 CHAT_ID = os.environ["CHAT_ID"]
