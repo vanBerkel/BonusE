@@ -11,7 +11,7 @@ GIT_HUB_TOKEN = os.environ["GIT_HUB_TOKEN"]
 
 GIST_URL = f"https://api.github.com/gists/{GIST_ID}"
 HEADERS = {
-    "Authorization": f"token {GIT_HUB_TOKEN}",
+    "Authorization": f"{GIT_HUB_TOKEN}",
     "Accept": "application/vnd.github+json"
 }
 
