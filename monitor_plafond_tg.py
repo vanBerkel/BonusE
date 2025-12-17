@@ -43,7 +43,7 @@ def save_value(value):
     payload = {
         "files": {
             "plafond.json": {
-                "content": json.dumps({"value": current})
+                "content": json.dumps({"value": value})
             }
         }
     }
