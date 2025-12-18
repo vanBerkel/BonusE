@@ -58,6 +58,11 @@ def send_telegram(msg):
 def main():
     current = get_plafond()
     print("DEBUG: type(current) =", type(current), "value =", current)
+    if current > 11000:
+        send_telegram(
+            f"🚨 PLAFOND Voucher\n"
+            f"Money: {current}"
+        )
     old = get_old_value()
 
     if current != old:
