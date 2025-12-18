@@ -1,5 +1,4 @@
-name: Monitor Plafond Telegram
-
+name: Monitor Cron
 on:
   repository_dispatch:
     types: [trigger-esterno]
