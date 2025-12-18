@@ -2,7 +2,6 @@ import os
 import requests
 import json
 
-print("DEBUG: env keys =", list(os.environ.keys()))
 
 API_URL = os.environ["API_URL"]
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
@@ -28,7 +27,6 @@ def get_plafond():
 def get_old_value():
     r = requests.get(GIST_URL, headers=HEADERS)
     r.raise_for_status()
-    print("DEBUG: response text (first 500 chars) =", r.text[:500])
 
     content = r.json()["files"]["plafond.json"]["content"]
     return int(json.loads(content)["value"])
@@ -44,8 +42,7 @@ def save_value(value):
     }
     
     r = requests.patch(GIST_URL, headers=HEADERS, json=payload)
-    print("PATCH STATUS:", r.status_code)
-    print("PATCH RESPONSE:", r.text)
+
     r.raise_for_status()
 
 def send_telegram(msg):
@@ -57,12 +54,7 @@ def send_telegram(msg):
 
 def main():
     current = get_plafond()
-    print("DEBUG: type(current) =", type(current), "value =", current)
-    if current > 11000:
-        send_telegram(
-            f"🚨 PLAFOND Voucher\n"
-            f"Money: {current}"
-        )
+   
     old = get_old_value()
 
     if current != old:
