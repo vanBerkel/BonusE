@@ -1,0 +1,29 @@
+name: Monitor Plafond Telegram
+
+on:
+  workflow_dispatch:
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run monitor script
+        run: python monitor.py
+        env:
+          API_URL: ${{ secrets.API_URL }}
+          TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
+          CHAT_ID: ${{ secrets.CHAT_ID }}
+          GIST_ID: ${{ secrets.GIST_ID }}
+          GIST_PAT: ${{ secrets.GIST_PAT }}
