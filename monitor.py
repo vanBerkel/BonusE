@@ -2,6 +2,7 @@ import os
 import requests
 import json
 import time
+import random
 
 API_URL = os.environ["API_URL"]
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
@@ -47,6 +48,6 @@ if __name__ == "__main__":
     try:
         while True:
             main()
-            time.sleep(20)
+            time.sleep(random.randint(9, 23))
     except KeyboardInterrupt:
         print("Monitor interrotto")
