@@ -67,4 +67,9 @@ def main():
         save_value(current)
 
 if __name__ == "__main__":
-    main()
+    try:
+        while True:
+            main()
+            time.sleep(random.randint(21, 63))
+    except KeyboardInterrupt:
+        print("Monitor interrotto S")
