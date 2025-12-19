@@ -1,7 +1,8 @@
 import os
 import requests
 import json
-
+import time
+import random
 
 API_URL = os.environ["API_URL"]
 TELEGRAM_TOKEN = os.environ["TELEGRAM_TOKEN"]
